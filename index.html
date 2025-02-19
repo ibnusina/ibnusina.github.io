@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./assets/css/profile_page_style.css">
     <title>Ibnu Sina</title>
     <meta name="description" content="Software developer, mostly working on iOS platform">
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
     
     <style>
         .visit-website-button {
@@ -39,6 +40,91 @@
         .visit-website-button:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .download-btn {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(
+            45deg,
+            #000000 0%,
+            #000000 40%,
+            #ffffff 50%,
+            #000000 60%,
+            #000000 100%
+            );
+            background-size: 200% 100%;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            isolation: isolate;
+            animation: gradientShift 4s linear infinite,
+                    glowPulse 2s ease-in-out infinite;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(
+            90deg,
+            #000000 0%,
+            #000000 40%,
+            #333333 50%,
+            #000000 60%,
+            #000000 100%
+            );
+            background-size: 200% 100%;
+            border-radius: 7px;
+            z-index: -1;
+            animation: gradientShift 4s linear infinite;
+            filter: blur(4px);
+            opacity: 0.5;
+        }
+
+        .download-btn:hover {
+            background: #333333;
+        }
+
+        .download-btn:hover::before {
+            opacity: 0.7;
+        }
+
+        .download-btn img {
+            width: 20px;
+            height: 20px;
+            filter: invert(1);
+        }
+
+        @keyframes gradientShift {
+            0% {
+            background-position: -30% 0%;
+            
+            }
+            100% {
+            background-position: 130% 0%; 
+            }
+        }
+
+        @keyframes glowPulse {
+            0% {
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+            }
+            100% {
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+            }
         }
     </style>
 
@@ -66,6 +152,10 @@
                     <b>Medium:</b><a href="https://medium.com/@ibnu-sina" class="no-underline"
                     target="blank"> medium.com/@ibnu-sina</a>
                 </p>
+                <a href="./assets/resume_fe.pdf" class="download-btn" target="noreferrer noopener">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file-down-kCli96uH7JPpQQBGqffkeDCHJWDkjN.png" alt="" />
+                    Download Experience Resume
+                  </a>
             </div>
         </div>
         <div class="row row-grey hide-r">
